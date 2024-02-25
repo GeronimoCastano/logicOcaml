@@ -39,4 +39,21 @@ The language supports the following operators, with variables being any length o
 ### Installation
 1. Clone the repository:
 
+`git clone https://github.com/GeronimoCastano/logicOcaml.git`
+
+2. Build the project with Dune:
+   `dune build`
+
+
+## Usage
+
+To run the project and evaluate logical expressions along with generating truth tables: write the logical expression in a string format inside of the main file using the logical functions, and then run the file in the terminal with:
+
+`dune exec bin/main.exe`
+
+
+
+
+## Contributing
+Your contributions are welcome! Feel free to submit pull requests, open issues, or suggest improvements.
 
