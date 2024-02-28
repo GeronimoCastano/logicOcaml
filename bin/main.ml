@@ -3,6 +3,6 @@ open Logicfunctions
 
 let () =
   print_truth_table
-    (truthTable
+    (truth_table
        "(ALCOHOL -> ~FRUITS) & (FRUITS -> (~ALCOHOL & ~SUGAR)) & (~SUGAR -> \
         ALCOHOL)")

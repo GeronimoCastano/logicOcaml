@@ -8,6 +8,9 @@ type exp =
   | Iff of exp * exp
   | Not of exp
 
+(** Evaluates the expression with the given environment (variable-boolean assignments) to a boolean value. 
+    Raises [Not_found] if a variable is not found in the environment. 
+*)
 let rec eval env exp =
   match exp with
   | Var s -> List.assoc s env
@@ -27,6 +30,7 @@ let rec eval env exp =
       | _ -> assert false)
   | Not e -> not (eval env e)
 
+(** Returns a list of all the unique variables in the expression. *)
 let list_vars exp =
   let rec get_vars exp =
     match exp with

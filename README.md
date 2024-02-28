@@ -15,9 +15,9 @@ Leveraging OCaml's functional programming paradigms, this project emphasizes imm
 ## Key Features in `Logicfunctions.ml`
 The `Logicfunctions.ml` module introduces several powerful functions for analyzing logical expressions:
 
-- **`truthTable`**: Takes a string representation of a logical expression and outputs the value of the expression in all possible environments for its variables. 
+- **`truth_table`**: Takes a string representation of a logical expression and outputs the value of the expression in all possible environments for its variables. 
 - **`print_truth_table`**: A custom function designed to print the output of `truthTable` in a readable format.
-- **`isTautology`**, **`isSatisfiable`**: These functions also take string inputs, analyzing expressions for tautology and satisfiability, respectively.
+- **`is_tautology`**, **`is_satisfiable`**: These functions also take string inputs, analyzing expressions for tautology and satisfiability, respectively.
 
 ### Logical Operators and Syntax
 The language supports the following operators, with variables being any length of capital letters, except for reserved constants "F" (false) and "T" (true):
@@ -26,7 +26,6 @@ The language supports the following operators, with variables being any length o
 - **Or**: Represented as `|`
 - **Xor**: Represented as `^`
 - **Implies**: Represented as `->`
-- **ImpliesBack**: Represented as `<-`
 - **Iff (If and only if)**: Represented as `<->`
 - **Not**: Represented as `~`
 

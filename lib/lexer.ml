@@ -13,7 +13,10 @@ type token =
 let is_letter c = match c with 'a' .. 'z' | 'A' .. 'Z' -> true | _ -> false
 let is_whitespace c = match c with ' ' | '\n' | '\t' -> true | _ -> false
 
-let varOrId s =
+(** Lexes constants or identifiers 
+  Everything that is not a constant is considered an identifier 
+*)
+let var_or_id s =
   match s with "T" -> BCON true | "F" -> BCON false | _ as id -> VAR id
 
 let lexer s =
@@ -43,10 +46,10 @@ let lexer s =
       | c when is_letter c -> lexId i i ts
       | _ -> failwith "illegal character"
   and lexId i j ts =
-    if j >= n then List.rev (varOrId (slice i (j - 1)) :: ts)
+    if j >= n then List.rev (var_or_id (slice i (j - 1)) :: ts)
     else
       match get j with
       | c when is_letter c -> lexId i (j + 1) ts
-      | _ -> loop j (varOrId (slice i (j - 1)) :: ts)
+      | _ -> loop j (var_or_id (slice i (j - 1)) :: ts)
   in
   loop 0 []
