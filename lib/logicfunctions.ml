@@ -30,7 +30,7 @@ let isTautology s =
 
 
 
-let rec print_truth_table tt =
+let print_truth_table tt =
   let print_entry (env, result) =
     let env_str = List.fold_left (fun acc (var, value) ->
       Printf.sprintf "%s%s=%b; " acc var value) "" env in
